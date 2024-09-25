@@ -5,6 +5,7 @@
 Файл module_6_1.py и загрузите его на ваш GitHub репозиторий и пришлите ссылку на него.
 '''
 
+
 class Animal:
     # класс Animal
     # атрибуты:
@@ -14,17 +15,17 @@ class Animal:
     alive = True
     fed = False
 
-    def ___init__(self, name: str):
+    def __init__(self, name: str):
         self.name = name
 
-    def eat(self,food):
+    def eat(self, food):
         # eat(self,name,food)- метод, где
-        #self -параметр класса Animal, название животного
-        #food - это параметр, принимающий объекты классов растений.
+        # self -параметр класса Animal, название животного
+        # food - это параметр, принимающий объекты классов растений.
         self.food = food
-        #если food.edible=True(Съедобно, фрукт) то животное съело что-то
+        # если food.edible=True(Съедобно, фрукт) то животное съело что-то
         # и накормлено self.fed = True осталось в живых
-        #Иначе животное не стало есть что-то и голодно, не живой
+        # Иначе животное не стало есть что-то и голодно, не живой
         if food.edible:
             print(f'{self.name} съел {food.name}')
             self.fed = True
@@ -40,28 +41,25 @@ class Plant:
     # name - индивидуальное название каждого растения
     edible = False
 
-    def ___init__(self, name):
+    def __init__(self, name):
         self.name = name
 
 
 class Mammal(Animal):
-    def __init__(self, name):
-        self.name = name
+    pass
 
 
 class Predator(Animal):
-    def __init__(self, name):
-        self.name = name
+    pass
+
 
 class Flower(Plant):
-    def __init__(self, name):
-        self.name = name
-        return
+    pass
+
+
 class Fruit(Plant):
-    def __init__(self, name):
-        self.name = name
-        self.edible = True
-        return
+    edible = True
+    
 
 a1 = Predator('Волк с Уолл-Стрит')
 a2 = Mammal('Хатико')
