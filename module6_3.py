@@ -35,7 +35,6 @@ class Horse:
     x_distance = 0
     # пройденный путь.
     sound = 'Frrr'
-
     # звук, который издаёт лошадь.
 
     def __init__(self):
@@ -54,7 +53,6 @@ class Eagle:
     y_distance = 0
     # высота полёта
     sound = 'I train, eat, sleep, and repeat'
-
     # звук, который издаёт орёл (отсылка)
 
     def __init__(self):
