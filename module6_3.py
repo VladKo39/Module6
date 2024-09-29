@@ -30,15 +30,11 @@ I train, eat, sleep, and repeat
 
 
 class Horse:
-    # Horse - класс лошадь.
-    # Атрибут класса:
-    x_distance = 0
-    # пройденный путь.
-    sound = 'Frrr'
-    # звук, который издаёт лошадь.
-
     def __init__(self):
-        # Для наследства
+        self.x_distance = 0
+        # Значение атрибута объекта
+        self.sound = 'Frrr'
+        # Значение атрибута объекта
         super().__init__()
 
     def run(self, dx):
@@ -48,15 +44,11 @@ class Horse:
 
 
 class Eagle:
-    # Eagle класс орёл.
-    # Атрибут класса:
-    y_distance = 0
-    # высота полёта
-    sound = 'I train, eat, sleep, and repeat'
-    # звук, который издаёт орёл (отсылка)
-
     def __init__(self):
-        self.sound = Eagle.sound
+        self.y_distance = 0
+        # Значение атрибута объекта
+        self.sound = 'I train, eat, sleep, and repeat'
+        # Значение атрибута объекта
 
     def fly(self, dy):
         # Метод класса Eagle:
@@ -66,9 +58,11 @@ class Eagle:
 
 class Pegasus(Horse, Eagle):
     # класс Пегас. Наследуется от Horse и Eagle в том же порядке.
+    def __init__(self):
+        super().__init__()
 
     def move(self, dx, dy):
-        # move(self) - где dx и dy изменения дистанции.
+        # Метод - где dx и dy изменения дистанции.
         # В этом методе должны запускаться
         super().run(dx)
         # наследованный метод run
@@ -77,20 +71,18 @@ class Pegasus(Horse, Eagle):
 
     def get_pos(self):
         # Метод класса:
-        distance = (self.x_distance, self.y_distance)
-        return distance
+        return (self.x_distance, self.y_distance)
         # возвращает текущее положение пегаса в виде кортежа (x_distance, y_distance)
 
     def voice(self):
         # voice - который печатает значение унаследованного атрибута sound.
-        super().__init__()
         print(self.sound)
 
 
 p1 = Pegasus()
 print(f'{"*" * 10} Определение объекта класса {type(p1).__name__} {"*" * 10}')
 print(f'{"*" * 10} Определение начальной позиции объекта {type(p1).__name__} {"*" * 24}')
-print(p1.get_pos())
+# print(p1.get_pos())
 p1.move(10, 15)
 print(f'{"*" * 10} Определение позиции объекта {type(p1).__name__} после первого изменения {"*" * 10}')
 print(p1.get_pos())
